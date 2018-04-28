@@ -8,7 +8,7 @@ import java.util.Map;
 
 @RestController
 @EnableAutoConfiguration
-public class Example {
+public class Compute {
     @RequestMapping(value="/", headers = "Accept=text/plain;charset=UTF-8")
     String home() {
         System.out.print("My first Springboot program.");
@@ -34,6 +34,6 @@ public class Example {
     }
 
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(Example.class, args);
+        SpringApplication.run(Compute.class, args);
     }
 }
