@@ -1,4 +1,4 @@
-package net.winfield.demo;
+package net.winfield.demo.computer.sb.controller;
 
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
