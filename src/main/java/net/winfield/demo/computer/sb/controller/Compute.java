@@ -32,7 +32,7 @@ public class Compute {
         String param1 = reqMap.get("param1").toString();
         String param2 = reqMap.get("param2").toString();
         //return "kaka";
-        System.out.print(computerService().plus(Float.valueOf(param1), Float.valueOf(param2)));
+        System.out.print(getComputerService().plus(Float.valueOf(param1), Float.valueOf(param2)));
         return Integer.parseInt(param1) - Integer.parseInt(param2);
     }
 
