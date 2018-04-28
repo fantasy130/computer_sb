@@ -1,15 +1,12 @@
 package net.winfield.demo.computer.sb.service;
 
 import org.slf4j.Logger;
+import org.springframework.context.annotation.Configuration;
+
 import java.math.BigDecimal;
 
+@Configuration
 public class ComputerService {
-
-    private final Logger logger;
-
-    public ComputerService(Logger logger) {
-        this.logger = logger;
-    }
 
     public String plus(float a, float b) {
         return String.valueOf(a + b);
@@ -24,8 +21,8 @@ public class ComputerService {
     }
 
     public String divide(float a, float b) throws IllegalArgumentException {
-        if(b == 0) {
-            logger.error("The 2nd parameter can not be zero.");
+        if (b == 0) {
+
             throw new IllegalArgumentException("The 2nd parameter can not be zero.");
         }
         float floatResult = a / b;
