@@ -29,6 +29,17 @@ public class Compute {
         return getComputerService().minus(Float.valueOf(input.getParam1()), Float.valueOf(input.getParam2()));
     }
 
+    @RequestMapping(value = "/multiple")
+    public String multiple(@RequestBody Input input) {
+        System.out.print("param1:" + input.getOperator());
+        return getComputerService().multiple(Float.valueOf(input.getParam1()), Float.valueOf(input.getParam2()));
+    }
+
+    @RequestMapping(value = "/divide")
+    public String divide(@RequestBody Input input) {
+        return getComputerService().divide(Float.valueOf(input.getParam1()), Float.valueOf(input.getParam2()));
+    }
+
     @Bean
     public ComputerService getComputerService() {
         return new ComputerService();
