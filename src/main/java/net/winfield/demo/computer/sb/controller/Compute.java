@@ -1,5 +1,6 @@
 package net.winfield.demo.computer.sb.controller;
 
+import net.winfield.demo.computer.sb.bean.Input;
 import net.winfield.demo.computer.sb.service.ComputerService;
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
@@ -18,22 +19,14 @@ public class Compute {
     }
 
     @RequestMapping(value = "/plus")
-    public int plus(@RequestBody Map<String, Object> reqMap) {
-        System.out.print("come here");
-        String param1 = reqMap.get("param1").toString();
-        String param2 = reqMap.get("param2").toString();
-        //return "kaka";
-        return Integer.parseInt(param1) + Integer.parseInt(param2);
+    public String plus(@RequestBody Input input) {
+        System.out.print("param1:" + input.getOperator());
+        return getComputerService().plus(Float.valueOf(input.getParam1()), Float.valueOf(input.getParam2()));
     }
 
     @RequestMapping(value = "/minus")
-    public int minus(@RequestBody Map<String, Object> reqMap) {
-        System.out.print("come here");
-        String param1 = reqMap.get("param1").toString();
-        String param2 = reqMap.get("param2").toString();
-        //return "kaka";
-        System.out.print(getComputerService().plus(Float.valueOf(param1), Float.valueOf(param2)));
-        return Integer.parseInt(param1) - Integer.parseInt(param2);
+    public String minus(@RequestBody Input input) {
+        return getComputerService().minus(Float.valueOf(input.getParam1()), Float.valueOf(input.getParam2()));
     }
 
     @Bean
