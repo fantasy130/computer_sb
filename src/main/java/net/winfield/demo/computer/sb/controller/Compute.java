@@ -7,8 +7,6 @@ import org.springframework.boot.autoconfigure.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
-
 @RestController
 @EnableAutoConfiguration
 public class Compute {
